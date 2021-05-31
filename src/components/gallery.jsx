@@ -84,6 +84,7 @@ const Gallery = () => {
                   <Modal
                     isOpen={isModalOpen}
                     ariaHideApp={false}
+                    closeTimeoutMS={500}
                     onRequestClose={() => setIsModalOpen(false)}
                     overlayClassName="custom-Modal__Overlay"
                     style={{
@@ -92,7 +93,7 @@ const Gallery = () => {
                         top: 10,
                         left: 95,
                         right: 95,
-                        bottom: 5,
+                        bottom: 30,
                         borderRadius: "10px",
                         backgroundColor: "rgb(34, 32, 32)",
                       },
@@ -101,7 +102,7 @@ const Gallery = () => {
                         top: "0px",
                         left: "0px",
                         right: "0px",
-                        bottom: "0px",
+                        bottom: 0,
                         border: "none",
                         background: "rgb(34, 32, 32)",
                         overflow: "hidden",

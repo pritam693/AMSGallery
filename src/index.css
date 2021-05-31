@@ -6,7 +6,7 @@ Variables
 
 :root {
   /* dark shades of primary color*/
-  --clr-primary-1: hsl(205, 86%, 17%);
+  --clr-primary-1: hsl(205, 92%, 26%);
   --clr-primary-2: hsl(205, 77%, 27%);
   --clr-primary-3: hsl(205, 72%, 37%);
   --clr-primary-4: hsl(205, 63%, 48%);
@@ -41,8 +41,8 @@ Variables
   --radius: 3rem;
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-  --max-width: 1170px;
-  --fixed-width: 450px;
+  --max-width: 100%;
+  --fixed-width: 100%;
   --clr-orange-1: hsl(12, 83%, 98%);
   --clr-orange-2: hsl(14, 91%, 95%);
   --clr-orange-3: hsl(12, 89%, 89%);
@@ -68,9 +68,11 @@ Global Styles
   box-sizing: border-box;
 }
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  background: rgb(34, 32, 32);
+  font-family: "Poppins", sans-serif, "Open Sans", Ubuntu, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Cantarell, "Helvetica Neue",
+    sans-serif;
+  /* background: rgb(34, 32, 32); */
+  background: rgb(31, 28, 28);
   color: white;
   line-height: 1.5;
   font-size: 0.875rem;
@@ -338,7 +340,7 @@ div .rest {
   width: 100%;
   display: flex;
   align-items: center;
-  background: rgb(34, 32, 32);
+  background: rgb(31, 28, 28);
   /* padding: 1rem 2rem; */
   border-radius: var(--radius);
   text-align: left;
@@ -376,6 +378,38 @@ div .rest {
   float: right;
 }
 
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+  z-index: 99;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.ReactModal__Content {
+  position: absolute;
+  left: 2.5rem;
+  right: 2.5rem;
+  top: 2.5rem;
+  bottom: 2.5rem;
+  background-color: #fff;
+  box-shadow: 0 0 10px 0 rgba(53, 61, 61, 0.5);
+  overflow: auto;
+  border-radius: 4px;
+  outline: none;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+}
+
 .users img {
   width: 300px;
   height: 300px;
@@ -383,6 +417,12 @@ div .rest {
   margin-left: 1rem;
   padding: 20px;
   cursor: pointer;
+  transition: var(--transition);
+}
+
+.users img:hover {
+  background: var(--clr-primary-1);
+  color: var(--clr-primary-5);
 }
 
 /* .custom-Modal__Overlay {
