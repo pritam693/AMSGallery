@@ -37,11 +37,12 @@ Variables
   --clr-green-light: hsl(125, 71%, 66%);
   --clr-black: #222;
   --transition: all 0.3s linear;
+  --hovertransition: 0.3s;
   --spacing: 0.1rem;
   --radius: 3rem;
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-  --max-width: 100%;
+  --max-width: 80%;
   --fixed-width: 100%;
   --clr-orange-1: hsl(12, 83%, 98%);
   --clr-orange-2: hsl(14, 91%, 95%);
@@ -381,12 +382,12 @@ div .rest {
 .ReactModal__Overlay {
   opacity: 0;
   transition: opacity 500ms ease-in-out;
-  z-index: 99;
-  position: absolute;
+  position: fixed;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
+  z-index: 999;
 }
 
 .ReactModal__Content {
@@ -396,9 +397,11 @@ div .rest {
   top: 2.5rem;
   bottom: 2.5rem;
   background-color: #fff;
-  box-shadow: 0 0 10px 0 rgba(53, 61, 61, 0.5);
+  box-shadow: 0 0 10px 0 rgba(43, 59, 59, 0.5);
   overflow: auto;
   border-radius: 4px;
+  -webkit-transform: translate(-50, -50%);
+  transform: translate(-50, -50%);
   outline: none;
 }
 
@@ -415,14 +418,14 @@ div .rest {
   height: 300px;
   margin-right: 1rem;
   margin-left: 1rem;
-  padding: 20px;
+  padding: 10px;
   cursor: pointer;
-  transition: var(--transition);
+  transition: var(--hovertransition);
 }
 
 .users img:hover {
-  background: var(--clr-primary-1);
-  color: var(--clr-primary-5);
+  box-shadow: 0 0 12px rgba(8, 219, 209, 0.829);
+  /* color: var(--clr-primary-1); */
 }
 
 /* .custom-Modal__Overlay {
