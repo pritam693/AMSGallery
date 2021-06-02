@@ -12,9 +12,9 @@ const Gallery = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [serviceAppointment, setServiceAppointment] = useState();
   const [ocr1Data, setOcrData] = useState();
-  const [gpsLoc, setGpsLoc] = useState();
-  const [woLoc, setWoLoc] = useState();
-  const [dateAndTime, setDateAndTime] = useState();
+  const [gpsLoc, setGpsLoc] = useState("");
+  const [woLoc, setWoLoc] = useState("");
+  const [dateTime, setDateTime] = useState();
   const workdIds = users.map((user) => {
     const workIdArr = user.workId;
     return workIdArr;
@@ -24,9 +24,9 @@ const Gallery = () => {
     return workLineItemIdArr;
   });
 
-  const serviceAppointmentId = users.map((user) => {
-    const serviceAppointmentArr = user.serviceAppointment;
-    return serviceAppointmentArr;
+  const serviceAggrementId = users.map((user) => {
+    const serviceAggrementArr = user.serviceAggrement;
+    return serviceAggrementArr;
   });
 
   const getSelectedUsers = async () => {
@@ -46,13 +46,13 @@ const Gallery = () => {
       <div>
         <div className="imageGrid">
           <h3>
-            Service Appointment : {serviceAppointmentId[0]} <br></br>
+            Service Appointment : {serviceAggrementId[0]} <br></br>
           </h3>
           <h4>
             Work Order:{workdIds[0]}
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WOLI :{" "}
             {workLineItemIds[4]}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Service Appointment : {serviceAppointmentId[0]}
+            Service Appointment : {serviceAggrementId[0]}
           </h4>
 
           <ul className="users">
@@ -62,23 +62,24 @@ const Gallery = () => {
                 workId,
                 workLineItemId,
                 blobURL,
+                thumbNailURL,
                 ocrData,
-                gpsLOC,
-                woLOC,
-                dateAndTime,
+                longitude,
+                latitude,
+                dateTime,
               } = user;
               return (
                 <li key={id}>
                   <img
-                    src={blobURL}
+                    src={thumbNailURL}
                     alt={workId}
                     onClick={() => {
                       setSelectedImage(blobURL);
                       setIsModalOpen(true);
                       setOcrData(ocrData);
-                      setWoLoc(woLOC);
-                      setGpsLoc(gpsLOC);
-                      setDateAndTime(dateAndTime);
+                      setWoLoc(longitude + "\xa0\xa0\xa0\xa0\xa0" + latitude);
+                      setGpsLoc(longitude + "\xa0\xa0\xa0\xa0\xa0" + latitude);
+                      setDateTime(dateTime);
                     }}
                   />
                   <Modal
@@ -115,10 +116,8 @@ const Gallery = () => {
                   >
                     <div className="information">
                       <p>
-                        SA No. : {serviceAppointmentId[0]}
-                        &nbsp;&nbsp;&nbsp;&nbsp; GPS Loc: {gpsLoc}
-                        &nbsp;&nbsp;&nbsp;&nbsp; WO Loc: {woLoc}
-                        &nbsp;&nbsp;&nbsp;&nbsp;Date:{dateAndTime}
+                        SA No. :&nbsp; {serviceAggrementId[0]}
+                        &nbsp;&nbsp;&nbsp;&nbsp;
                       </p>
                       {ocr1Data !== null &&
                         ocr1Data !== undefined &&
@@ -135,17 +134,24 @@ const Gallery = () => {
                         className="center"
                       />
                     </p>
-                    <p className="closebtn">
-                      <button
-                        className="btnclose"
-                        style={{ float: "right" }}
-                        onClick={() => {
-                          setIsModalOpen(false);
-                        }}
-                      >
-                        Close
-                      </button>
-                    </p>
+                    <div>
+                      <p style={{ float: "left" }}>
+                        GPS Loc:&nbsp; {gpsLoc}
+                        &nbsp;&nbsp;&nbsp;&nbsp; WO Loc:&nbsp; {woLoc}
+                        &nbsp;&nbsp;&nbsp;&nbsp;Date:&nbsp;{dateTime}
+                      </p>
+                      <p className="closebtn">
+                        <button
+                          className="btnclose"
+                          style={{ float: "right" }}
+                          onClick={() => {
+                            setIsModalOpen(false);
+                          }}
+                        >
+                          Close
+                        </button>
+                      </p>
+                    </div>
                   </Modal>
                 </li>
               );

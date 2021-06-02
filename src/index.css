@@ -379,6 +379,11 @@ div .rest {
   float: right;
 }
 
+.image img {
+  height: 550px;
+  width: 550px;
+}
+
 .ReactModal__Overlay {
   opacity: 0;
   transition: opacity 500ms ease-in-out;
