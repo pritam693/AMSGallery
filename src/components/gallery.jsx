@@ -43,17 +43,19 @@ const Gallery = () => {
 
   return (
     <>
-      <div>
+      <section>
         <div className="imageGrid">
-          <h3>
-            Service Appointment : {serviceAggrementId[0]} <br></br>
-          </h3>
-          <h4>
-            Work Order:{workdIds[0]}
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WOLI :{" "}
-            {workLineItemIds[4]}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Service Appointment : {serviceAggrementId[0]}
-          </h4>
+          <div className="topInformation">
+            <h3>
+              Service Appointment : {serviceAggrementId[0]} <br></br>
+            </h3>
+            <h4>
+              Work Order:{workdIds[0]}
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WOLI :{" "}
+              {workLineItemIds[0]}
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </h4>
+          </div>
 
           <ul className="users">
             {users.map((user) => {
@@ -96,7 +98,7 @@ const Gallery = () => {
                         right: 95,
                         bottom: 30,
                         borderRadius: "10px",
-                        backgroundColor: "rgb(34, 32, 32)",
+                        backgroundColor: "#fff",
                       },
                       content: {
                         position: "absolute",
@@ -105,7 +107,7 @@ const Gallery = () => {
                         right: "0px",
                         bottom: 0,
                         border: "none",
-                        background: "rgb(34, 32, 32)",
+                        background: "#fff",
                         overflow: "hidden",
                         WebkitOverflowScrolling: "touch",
                         borderRadius: "4px",
@@ -158,7 +160,7 @@ const Gallery = () => {
             })}
           </ul>
         </div>
-      </div>
+      </section>
     </>
   );
 };

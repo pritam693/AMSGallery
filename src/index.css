@@ -42,7 +42,7 @@ Variables
   --radius: 3rem;
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-  --max-width: 80%;
+  --max-width: 90%;
   --fixed-width: 100%;
   --clr-orange-1: hsl(12, 83%, 98%);
   --clr-orange-2: hsl(14, 91%, 95%);
@@ -73,8 +73,8 @@ body {
     BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Cantarell, "Helvetica Neue",
     sans-serif;
   /* background: rgb(34, 32, 32); */
-  background: rgb(31, 28, 28);
-  color: white;
+  background: #fff;
+  color: #fff;
   line-height: 1.5;
   font-size: 0.875rem;
 }
@@ -93,6 +93,7 @@ h4 {
   line-height: 1.25;
   margin-bottom: 0.75rem;
   margin-top: 1.25rem;
+  margin-left: 1rem;
 }
 h1 {
   font-size: 3rem;
@@ -102,12 +103,18 @@ h2 {
 }
 h3 {
   font-size: 1.25rem;
+  font-family: "Baloo Tammudu 2", cursive;
 }
 h4 {
   font-size: 0.875rem;
 }
+.topInformation {
+  background-color: #239fdd;
+  padding: 3px;
+}
 p {
-  color: white;
+  font-family: "Odibee Sans", cursive;
+  color: black;
   margin-bottom: 0.75rem;
 }
 div .main {
@@ -186,7 +193,7 @@ div .rest {
 /* section */
 .section,
 .container {
-  width: 90vw;
+  width: 80vw;
   margin: 0 auto;
   max-width: var(--max-width);
 }
@@ -336,12 +343,13 @@ div .rest {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
   margin: 2rem auto;
+  background-color: #fff;
 }
 .users li {
   width: 100%;
   display: flex;
   align-items: center;
-  background: rgb(31, 28, 28);
+  background: #fff;
   /* padding: 1rem 2rem; */
   border-radius: var(--radius);
   text-align: left;
@@ -429,7 +437,7 @@ div .rest {
 }
 
 .users img:hover {
-  box-shadow: 0 0 12px rgba(8, 219, 209, 0.829);
+  box-shadow: 0 0 12px #239fdd;
   /* color: var(--clr-primary-1); */
 }
 
