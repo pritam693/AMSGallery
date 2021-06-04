@@ -41,6 +41,8 @@ const Gallery = () => {
     getSelectedUsers();
   }, []);
 
+  console.log(users.blobURL);
+
   return (
     <>
       <section>
@@ -57,7 +59,7 @@ const Gallery = () => {
             </h4>
           </div>
 
-          <ul className="users">
+          <ol type="1" className="users">
             {users.map((user) => {
               const {
                 id,
@@ -84,6 +86,17 @@ const Gallery = () => {
                       setDateTime(dateTime);
                     }}
                   />
+                  <p style={{ float: "left" }}>
+                    Image No:
+                    {users.indexOf(user) + 1}
+                    <br />
+                    Uploaded Date:&nbsp;&nbsp;{dateTime}
+                    <br />
+                    Gps Loc : &nbsp;&nbsp;
+                    {longitude.toFixed(8) +
+                      "\xa0\xa0\xa0\xa0\xa0" +
+                      latitude.toFixed(8)}
+                  </p>
                   <Modal
                     isOpen={isModalOpen}
                     ariaHideApp={false}
@@ -158,7 +171,7 @@ const Gallery = () => {
                 </li>
               );
             })}
-          </ul>
+          </ol>
         </div>
       </section>
     </>

@@ -351,12 +351,13 @@ div .rest {
   align-items: center;
   background: #fff;
   /* padding: 1rem 2rem; */
-  border-radius: var(--radius);
+  border-radius: 0px;
   text-align: left;
   flex-direction: row;
   justify-content: center;
   align-content: flex-start;
   flex-wrap: wrap;
+  border: solid 1px #222;
 }
 .imageGrid input[type="text"] {
   padding: 6px;
@@ -436,7 +437,7 @@ div .rest {
   transition: var(--hovertransition);
 }
 
-.users img:hover {
+.users li:hover {
   box-shadow: 0 0 12px #239fdd;
   /* color: var(--clr-primary-1); */
 }
