@@ -86,7 +86,7 @@ const Gallery = () => {
                       setDateTime(dateTime);
                     }}
                   />
-                  <p style={{ float: "left" }}>
+                  <p style={{ float: "left" }} className="imgInfo">
                     Image No:
                     {users.indexOf(user) + 1}
                     <br />
