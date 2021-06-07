@@ -357,7 +357,7 @@ div .rest {
   justify-content: center;
   align-content: flex-start;
   flex-wrap: wrap;
-  border: solid 1px #222;
+  border: solid 1px rgb(177, 166, 166);
 }
 .imageGrid input[type="text"] {
   padding: 6px;
@@ -395,7 +395,7 @@ div .rest {
 
 .ReactModal__Overlay {
   opacity: 0;
-  transition: opacity 500ms ease-in-out;
+  transition: opacity 500ms zoom-in;
   position: fixed;
   left: 0;
   right: 0;
@@ -428,8 +428,8 @@ div .rest {
 }
 
 .users img {
-  width: 500px;
-  height: 330px;
+  width: 400px;
+  height: 312px;
   margin-right: 1rem;
   margin-left: 1rem;
   padding: 10px;
@@ -439,21 +439,9 @@ div .rest {
 
 .users li:hover {
   box-shadow: 0 0 12px #239fdd;
-  /* color: var(--clr-primary-1); */
+  transform: scale(1.01);
 }
 
-/* .custom-Modal__Overlay {
-  opacity: 10;
-  transition: opacity 500ms ease-out;
-}
-
-.custom-Modal__Overlay--after-open {
-  opacity: 1;
-}
-
-.custom-Modal__Overlay--before-close {
-  opacity: 0;
-} */
 .users h4 {
   margin-bottom: 0.15rem;
 }
