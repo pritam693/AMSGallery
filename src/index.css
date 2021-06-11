@@ -113,7 +113,7 @@ h4 {
   padding: 3px;
 }
 p {
-  font-family: "Odibee Sans", cursive;
+  font-family: "Noto Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
   color: black;
   margin-bottom: 0.75rem;
 }
@@ -389,7 +389,7 @@ div .rest {
 }
 
 .image img {
-  height: 550px;
+  height: 600px;
   width: 550px;
 }
 
@@ -435,6 +435,14 @@ div .rest {
   padding: 10px;
   cursor: pointer;
   transition: var(--hovertransition);
+}
+
+.rotate90 {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
 .users li:hover {

@@ -15,6 +15,9 @@ const Gallery = () => {
   const [gpsLoc, setGpsLoc] = useState("");
   const [woLoc, setWoLoc] = useState("");
   const [dateTime, setDateTime] = useState();
+  const capturedDate = "2/10/2021 10:00:04 AM";
+  const uploadedBy = "Thomas Anderson";
+  const organization = "Lanes";
   const workdIds = users.map((user) => {
     const workIdArr = user.workId;
     return workIdArr;
@@ -75,6 +78,7 @@ const Gallery = () => {
               return (
                 <li key={id}>
                   <img
+                    className="rotate90"
                     src={thumbNailURL}
                     alt={workId}
                     onClick={() => {
@@ -87,14 +91,14 @@ const Gallery = () => {
                     }}
                   />
                   <p style={{ float: "left" }} className="imgInfo">
-                    Image No:
+                    Image No:&nbsp;&nbsp;
                     {users.indexOf(user) + 1}
                     <br />
                     Uploaded Date:&nbsp;&nbsp;{dateTime}
                     <br />
                     Gps Loc : &nbsp;&nbsp;
                     {longitude.toFixed(8) +
-                      "\xa0\xa0\xa0\xa0\xa0" +
+                      "\xa0\xa0\xa0" +
                       latitude.toFixed(8)}
                   </p>
                   <Modal
@@ -109,7 +113,7 @@ const Gallery = () => {
                         top: 10,
                         left: 95,
                         right: 95,
-                        bottom: 30,
+                        bottom: 10,
                         borderRadius: "10px",
                         backgroundColor: "#fff",
                       },
@@ -131,7 +135,7 @@ const Gallery = () => {
                   >
                     <div className="information">
                       <p>
-                        SA No. :&nbsp; {serviceAggrementId[0]}
+                        <b>SA No. :</b>&nbsp; {serviceAggrementId[0]}
                         &nbsp;&nbsp;&nbsp;&nbsp;
                       </p>
                       {ocr1Data !== null &&
@@ -151,9 +155,17 @@ const Gallery = () => {
                     </p>
                     <div>
                       <p style={{ float: "left" }}>
-                        GPS Loc:&nbsp; {gpsLoc}
-                        &nbsp;&nbsp;&nbsp;&nbsp; WO Loc:&nbsp; {woLoc}
-                        &nbsp;&nbsp;&nbsp;&nbsp;Date:&nbsp;{dateTime}
+                        <b>GPS Loc:</b>&nbsp; {gpsLoc}
+                        &nbsp;&nbsp;&nbsp;&nbsp;<b>WO Loc:</b>&nbsp; {woLoc}
+                        &nbsp;&nbsp;&nbsp;&nbsp;<b>Uploaded Date:</b>&nbsp;
+                        {dateTime}
+                        <br />
+                        <b>Captured Date:</b>&nbsp;
+                        {capturedDate}
+                        &nbsp;&nbsp;&nbsp;&nbsp;<b>Uploaded By:</b>&nbsp;
+                        {uploadedBy}
+                        &nbsp;&nbsp;&nbsp;&nbsp;<b>Organization:</b>&nbsp;
+                        {organization}
                       </p>
                       <p className="closebtn">
                         <button
