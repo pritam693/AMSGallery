@@ -273,6 +273,10 @@ div .rest {
 }
 .errMsg{
   text-align:center;
+  border-style: solid;
+  border-radius: 10px;
+  padding-bottom: 50px;
+  border-color: rgb(90, 88, 88);
 }
 
 .btnclose:hover {

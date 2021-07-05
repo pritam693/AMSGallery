@@ -202,11 +202,11 @@ const Gallery = () => {
                                 <b>Gps Loc. :</b> &nbsp;&nbsp;&nbsp;
                                 {(longitude == null
                                   ? "0.00"
-                                  : longitude.toFixed(8)) +
+                                  : longitude.slice(0, 11)) +
                                   "\xa0\xa0\xa0" +
                                   (latitude == null
                                     ? "0.00"
-                                    : latitude.toFixed(8))}
+                                    : latitude.slice(0, 11))}
                                 <br />
                                 <b>Field User Name:</b>&nbsp;&nbsp;{owner}
                               </p>
